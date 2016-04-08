@@ -12,17 +12,27 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Trip Tips</a>
       <ul id="nav-mobile" class="right">
-        <li><a href="#"><i class="materialize-icons">add_circle</i> Add a tip</a></li>
-        <li><a href="#"><i class="materialize-icons">location</i> Places</a></li>
+        <li><a href="#"><i class="material-icons left">add_circle</i> Add a tip</a></li>
+        <li><a href="#"><i class="material-icons left">map</i> Places</a></li>
       </ul>
     </div>
   </nav>
+  
+  <div id="body"></div>
 
-  <div id="body">
-    
+  <div id="tip-template" class="hide">
+    <div class="card">
+      <div class="card-content">
+        <div class="title">location</div>
+        <div class="user">user</div>
+        <div class="content">content</div>
+      </div>
+    </div>
   </div>
+  
 
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/Materialize/bin/materialize.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
