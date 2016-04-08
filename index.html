@@ -12,7 +12,7 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Trip Tips</a>
       <ul id="nav-mobile" class="right">
-        <li><a href="postform.html"><i class="material-icons left">add_circle</i> Add a tip</a></li>
+        <li><a class="modal-trigger" href="#form_modal"><i class="material-icons left">add_circle</i> Add a tip</a></li>
         <li><a href="index.html"><i class="material-icons left">map</i> Places</a></li>
       </ul>
     </div>
@@ -30,6 +30,7 @@
         <div class="comments collection">
           <li class="collection-header"><h4>Comments</h4></li>
         </div>
+        <a class="modal-trigger" href="#form_modal"><i class="material-icons left">add_circle</i> Add a comment</a>
       </div>
     </div>
   </div>
@@ -41,8 +42,36 @@
     </li>
   </div>
   
+  
+  <div id="form_modal" class="modal">
+	<form  class="modal-content" method="Post" action="/tips">
+		<div class="modal-content">
+			<div class="row">
+				<div class="input-field col s6">
+				  <label for="Name">Name</label>
+				  <input id="Name" type="text" class="validate">
+				 </div>
+				<div class="input-field col s6">
+				  <label for="Location">Location</label>
+				  <input id="Location" type="text" class="validate" required>
+				 </div>
+			 </div>
+			<div class="row">
+				<div class="input-field col s12">
+				  <label for="Message">Message</label>
+				  <textarea id="Message" class="materialize-textarea" required></textarea>
+				 </div>
+			 </div>
+		 </div>
+		<div class="modal-footer">
+			<input type="submit" class="waves-effect waves-light btn"/>
+		 </div>
+	</form>
+	 </div>
+  </div>
 
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
+	  <script src="bower_components/jquery-validate/dist/jquery.validate.min.js"></script>
   <script src="bower_components/Materialize/bin/materialize.js"></script>
   <script src="js/main.js"></script>
 </body>

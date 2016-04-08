@@ -7,7 +7,16 @@ app.global = (function() {
     var comments = $(feedTemplate).find('.comments');
     console.log(comments);
   }
-
+ function prepareForm(){
+	 
+		$("form").validate({
+			errorClass: 'invalid',
+			errorElement: 'span'
+		});
+		
+		$('.modal-trigger').leanModal();
+		
+ }
   function getFeed() {
     var tips = [
       {
@@ -41,6 +50,7 @@ app.global = (function() {
 
     init: function() {
       getFeed();
+	  prepareForm();
     }
 
   };
