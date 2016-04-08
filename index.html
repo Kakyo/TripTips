@@ -12,22 +12,33 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Trip Tips</a>
       <ul id="nav-mobile" class="right">
-        <li><a href="#"><i class="material-icons left">add_circle</i> Add a tip</a></li>
-        <li><a href="#"><i class="material-icons left">map</i> Places</a></li>
+        <li><a href="postform.html"><i class="material-icons left">add_circle</i> Add a tip</a></li>
+        <li><a href="index.html"><i class="material-icons left">map</i> Places</a></li>
       </ul>
     </div>
   </nav>
   
-  <div id="body"></div>
+  <div id="body" class="container"></div>
 
   <div id="tip-template" class="hide">
     <div class="card">
       <div class="card-content">
-        <div class="title">location</div>
-        <div class="user">user</div>
-        <div class="content">content</div>
+        <div class="title"><strong>location</strong></div>
+        <div class="user">by name</div>
+        <div class="content">content_text</div>
+
+        <div class="comments collection">
+          <li class="collection-header"><h4>Comments</h4></li>
+        </div>
       </div>
     </div>
+  </div>
+
+  <div id="comment-template" class="hide">
+    <li class="collection-item">
+      <div class="user">by name</div>
+      <div class="content">message</div>
+    </li>
   </div>
   
 
