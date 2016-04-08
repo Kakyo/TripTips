@@ -1,0 +1,15 @@
+{
+  tips: [
+    {
+      name: "Emilio",
+      location: "Emilio's place",
+      message: "",
+      comments: [
+        {
+          name: "",
+          comment: ""
+        }
+      ]
+    }
+  ]
+}
