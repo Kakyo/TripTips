@@ -20,7 +20,7 @@
 
   <div id="body">
   <div class="row">
-	<form class="col s12">
+	<form class="col s12" method="Post" action="/tips">
 	<div class="row">
       <div class="input-field col s6">
         <input placeholder="Placeholder" id="User" type="text" class="validate">
@@ -30,17 +30,30 @@
         <input placeholder="Placeholder" id="Location" type="text" class="validate">
         <label for="Location">Location</label>
      </div>
+        <div class="input-field col s6">
+          <label for="User">User</label>
+          <input id="User" type="text" class="validate">
+	     </div>
+        <div class="input-field col s6">
+          <label for="Location">Location</label>
+          <input id="Location" type="text" class="validate" required>
+	     </div>
 	 </div>
 	<div class="row">
         <div class="input-field col s12">
-          <textarea id="Message" class="materialize-textarea"></textarea>
           <label for="Message">Message</label>
+          <textarea id="Message" class="materialize-textarea" required></textarea>
 	     </div>
+	 </div>
+	<div class="row">
+		<input type="submit" class="waves-effect waves-light btn"/>
 	 </div>
 	</form>
 	 </div>
 
 	  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+	  <script src="bower_components/jquery-validate/dist/jquery.validate.min.js"></script>
 	  <script src="bower_components/Materialize/bin/materialize.js"></script>
+	  <script src="js/form.js"></script>
 	</body>
 </html>
