@@ -1,0 +1,26 @@
+{
+  "name": "triptips",
+  "version": "1.0.0",
+  "description": "The most awesome travel tips",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kakyo/TripTips"
+  },
+  "keywords": [
+    "Trip",
+    "Tips"
+  ],
+  "author": "Winner Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kakyo/TripTips/issues"
+  },
+  "homepage": "https://github.com/Kakyo/TripTips",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
