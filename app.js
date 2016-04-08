@@ -24,10 +24,16 @@ app.get('/', function (req, res) {
 });
 
 app.get('/tips', function (req, res) {
-	
-	var tips = fs.readFileSync("tips.json", "utf8");
+    var tips = fs.readFile("tips.json", function ( err, tips ) {
+        res.setHeader( 'Content-Type', 'application/json' );
+        res.send( tips );
+    } );
+});
 
-	res.send(tips);
+app.get('/tipx', function (req, res) {
+    var tips = fs.readFile( "tips.json", "utf8", function ( err, tips ) {
+        res.send( tips );
+    } );
 });
 
 app.listen(3000, function () {
