@@ -1,38 +1,34 @@
 express = require('express');
 var app = express();
 var fs = require("fs");
-var fileName = "foo.txt";
+var FILE_NAME = "tips.json";
+var parser = require( "body-parser" );
+var urlencodedParser = parser.urlencoded({ extended: false });
 
 app.get('/', function (req, res) {
-	fs.exists(fileName, function(exists) {
-	  if (exists) {
-		fs.stat(fileName, function(error, stats) {
-		  fs.open(fileName, "r", function(error, fd) {
-			var buffer = new Buffer(stats.size);
-
-			fs.read(fd, buffer, 0, buffer.length, null, function(error, bytesRead, buffer) {
-			  var data = buffer.toString("utf8", 0, buffer.length);
-
-			  console.log(data);
-			  fs.close(fd);
-			});
-		  });
-		});
-	  }
-	});
-	res.send("Hello World!")
+    res.send("Hello World!")
 });
 
 app.get('/tips', function (req, res) {
-    var tips = fs.readFile("tips.json", function ( err, tips ) {
+    var tips = fs.readFile( FILE_NAME, function ( err, tips ) {
         res.setHeader( 'Content-Type', 'application/json' );
         res.send( tips );
     } );
 });
 
-app.get('/tipx', function (req, res) {
-    var tips = fs.readFile( "tips.json", "utf8", function ( err, tips ) {
-        res.send( tips );
+app.post('/tips', urlencodedParser, function (req, res) {
+    var tips = fs.readFile( "tips.json", "utf8", function ( err, data ) {
+        if ( !req.body )
+            return res.sendStatus( 400 );
+        data = JSON.parse( data );
+        data.tips.push( {
+            "name": req.body.name,
+            "location": req.body.location,
+            "message": req.body.message
+        } );
+        fs.writeFile( FILE_NAME, JSON.stringify( data ), { encoding: "utf8" }, function () {
+            res.send( JSON.stringify( { success: true } ) );
+        } );
     } );
 });
 
