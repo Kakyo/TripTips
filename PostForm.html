@@ -1,7 +1,46 @@
-<html>
-<form>
-	<label>User :<input type="text" /></label>
-	<label>Location :<input type="text" /></label>
-	<label>Message :<input type="textarea" /></label>
-</form>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trip Tips</title>
+</head>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="bower_components/Materialize/bin/materialize.css" />
+  <body>
+  
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Trip Tips</a>
+      <ul id="nav-mobile" class="right">
+        <li><a href="#"><i class="materialize-icons">add_circle</i> Add a tip</a></li>
+        <li><a href="#"><i class="materialize-icons">location</i> Places</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="body">
+  <div class="row">
+	<form class="col s12">
+	<div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="User" type="text" class="validate">
+          <label for="User">User</label>
+	     </div>
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="Location" type="text" class="validate">
+          <label for="Location">Location</label>
+	     </div>
+	 </div>
+	<div class="row">
+        <div class="input-field col s12">
+          <textarea id="Message" class="materialize-textarea"></textarea>
+          <label for="Message">Message</label>
+	     </div>
+	 </div>
+	</form>
+	 </div>
+
+	  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+	  <script src="bower_components/Materialize/bin/materialize.js"></script>
+	</body>
+</html>
